@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix It Yourself / Чини Сам</title>
+    <meta name="description" content="Курс по ремонту электроники для начинающих. A beginner-friendly electronics repair course.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; text-align: center; }
+        header { background: #222; color: white; padding: 2rem 1rem; }
+        h1 { margin: 0; font-size: 2.5rem; }
+        .lang-switch { position: absolute; top: 1rem; right: 1rem; }
+        button { margin: 1rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer; }
+        .section { padding: 2rem; max-width: 800px; margin: 0 auto; }
+        footer { background: #eee; padding: 1rem; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button onclick="switchLang('ru')">RU</button>
+        <button onclick="switchLang('en')">EN</button>
+    </div>
+    <header>
+        <h1 id="title">Чини Сам</h1>
+        <p id="subtitle">Курс по ремонту электроники для начинающих</p>
+    </header>
+    <section class="section" id="description">
+        <p>Научись находить и устранять поломки в бытовой электронике, используя простые инструменты и знания. Без опыта.</p>
+    </section>
+    <section class="section">
+        <button onclick="alert('Спасибо за интерес! Мы скоро с вами свяжемся.')">Записаться на курс</button>
+    </section>
+    <footer>© 2025 Fix It Yourself</footer>
+
+    <script>
+        const content = {
+            ru: {
+                title: "Чини Сам",
+                subtitle: "Курс по ремонту электроники для начинающих",
+                description: "Научись находить и устранять поломки в бытовой электронике, используя простые инструменты и знания. Без опыта.",
+                button: "Записаться на курс"
+            },
+            en: {
+                title: "Fix It Yourself",
+                subtitle: "Beginner Electronics Repair Course",
+                description: "Learn how to identify and fix faults in everyday electronics using simple tools and knowledge. No prior experience required.",
+                button: "Join the Course"
+            }
+        };
+
+        function switchLang(lang) {
+            document.getElementById("title").innerText = content[lang].title;
+            document.getElementById("subtitle").innerText = content[lang].subtitle;
+            document.getElementById("description").innerText = content[lang].description;
+            document.querySelector("button").innerText = content[lang].button;
+        }
+    </script>
+</body>
+</html>
